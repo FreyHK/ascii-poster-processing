@@ -2,7 +2,9 @@ import processing.pdf.*;
 
 PImage img;
 
-String textFilename = "pride.txt";
+String imgPath = "imgs/nude-125-100.png";
+
+String textFilename = "poem.txt";
 String text; 
 
 String fontName = "RobotoMono.ttf";
@@ -10,8 +12,8 @@ String fontName = "RobotoMono.ttf";
 Boolean export = false;
 String exportFilename;
 
-int renderWidth = 600;
-int renderHeight = 600;
+int renderWidth = 125 * 8;
+int renderHeight = 100 * 8;
 
 void settings () {
   if (export) {
@@ -23,7 +25,7 @@ void settings () {
 }
 
 void setup () {
-  img = loadImage("skull-200.jpg"); 
+  img = loadImage(imgPath); 
   
   String[] lines = loadStrings(textFilename);
   text = "";
@@ -46,7 +48,7 @@ void draw () {
 }
 
 void drawAscii () {
-  background(#f6f6f6);
+  background(#000000);
   
   img.loadPixels();
   
